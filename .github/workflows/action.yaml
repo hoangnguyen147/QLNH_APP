@@ -25,7 +25,7 @@ jobs:
 
       - name: Re-Build containers on VM instance
         run: 
-          gcloud compute ssh --zone "asia-southeast1-b" "doanky8-vm" 
+          gcloud compute ssh --zone "asia-southeast1-b" "demo-vm" 
           --project ${{ secrets.GCE_PROJECT }} --ssh-flag="-l huyhoangnguyen147z" 
           --ssh-key-file temp_ssh_key_file --command="cd doanky8/demo && 
           git pull origin master && 
