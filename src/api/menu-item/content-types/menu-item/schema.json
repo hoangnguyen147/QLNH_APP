@@ -4,7 +4,8 @@
   "info": {
     "singularName": "menu-item",
     "pluralName": "menu-items",
-    "displayName": "MenuItem"
+    "displayName": "MenuItem",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,6 +18,10 @@
     },
     "description": {
       "type": "string"
+    },
+    "price": {
+      "type": "integer",
+      "min": 1000
     }
   }
 }

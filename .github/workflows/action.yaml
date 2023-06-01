@@ -1,0 +1,32 @@
+name: Deploy to Google Cloud
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          project_id: ${{ secrets.GCE_PROJECT }}
+          service_account_key: ${{ secrets.GCE_SA_KEY }}
+          export_default_credentials: true
+
+      - name: Setup SSH
+        run: |
+          echo "${{ secrets.GCE_SSH_PRIVATE_KEY }}" > temp_ssh_key_file
+          echo "${{ secrets.GCE_SSH_PUBLIC_KEY }}" > temp_ssh_key_file.pub
+          chmod 0600 temp_ssh_key_file
+
+      - name: Re-Build containers on VM instance
+        run: 
+          gcloud compute ssh --zone "asia-southeast1-b" "doanky8-vm" 
+          --project ${{ secrets.GCE_PROJECT }} --ssh-flag="-l huyhoangnguyen147z" 
+          --ssh-key-file temp_ssh_key_file --command="cd doanky8/demo && 
+          git pull origin master && 
+          docker-compose -f docker-compose.prod.yml up -d --build"
