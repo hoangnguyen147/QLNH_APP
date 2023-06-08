@@ -25,6 +25,9 @@
     },
     "quantity": {
       "type": "integer"
+    },
+    "demo": {
+      "type": "string"
     }
   }
 }
