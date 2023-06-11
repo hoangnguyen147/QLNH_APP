@@ -4,11 +4,11 @@
   "info": {
     "singularName": "menu-item",
     "pluralName": "menu-items",
-    "displayName": "MenuItem",
+    "displayName": "FoodItem",
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -25,9 +25,6 @@
     },
     "quantity": {
       "type": "integer"
-    },
-    "demo": {
-      "type": "string"
     }
   }
 }
