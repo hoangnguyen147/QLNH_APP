@@ -22,9 +22,8 @@
     },
     "customer": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "events"
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     },
     "note": {
       "type": "richtext",
@@ -37,9 +36,8 @@
     },
     "restaurant": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::restaurant.restaurant",
-      "inversedBy": "events"
+      "relation": "oneToOne",
+      "target": "api::restaurant.restaurant"
     },
     "menus": {
       "type": "relation",

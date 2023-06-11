@@ -65,12 +65,6 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "events": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::event.event",
-      "mappedBy": "customer"
-    },
     "phoneNumber": {
       "type": "string"
     }

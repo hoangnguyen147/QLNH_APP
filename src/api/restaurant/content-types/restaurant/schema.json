@@ -27,12 +27,6 @@
     },
     "rentCost": {
       "type": "biginteger"
-    },
-    "events": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::event.event",
-      "mappedBy": "restaurant"
     }
   }
 }
