@@ -18,6 +18,12 @@
     },
     "amount": {
       "type": "biginteger"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "payments"
     }
   }
 }

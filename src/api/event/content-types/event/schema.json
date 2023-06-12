@@ -20,11 +20,6 @@
       "type": "date",
       "required": true
     },
-    "customer": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
-    },
     "note": {
       "type": "richtext",
       "required": true
@@ -32,7 +27,8 @@
     "payments": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::payment.payment"
+      "target": "api::payment.payment",
+      "mappedBy": "event"
     },
     "restaurant": {
       "type": "relation",
@@ -47,6 +43,12 @@
     "capacity": {
       "type": "integer",
       "required": true
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::customer.customer",
+      "inversedBy": "events"
     }
   }
 }
