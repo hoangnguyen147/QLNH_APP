@@ -14,15 +14,23 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "pluginOptions": {}
     },
     "price": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "pluginOptions": {}
     },
     "food_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::menu-item.menu-item"
+    },
+    "main_course": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::menu-item.menu-item"

@@ -19,12 +19,31 @@
     "description": {
       "type": "string"
     },
-    "price": {
-      "type": "integer",
-      "min": 1000
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
-    "quantity": {
-      "type": "integer"
+    "price": {
+      "type": "biginteger",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Appetizer",
+        "Main Course",
+        "Hotpot",
+        "Grilled",
+        "Soup",
+        "Dessert"
+      ]
     }
   }
 }

@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -27,8 +27,7 @@
     "payments": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::payment.payment",
-      "mappedBy": "event"
+      "target": "api::payment.payment"
     },
     "restaurant": {
       "type": "relation",
@@ -49,6 +48,17 @@
       "relation": "manyToOne",
       "target": "api::customer.customer",
       "inversedBy": "events"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Unpaid",
+        "Paid",
+        "Completed",
+        "Cancelled"
+      ],
+      "default": "Unpaid",
+      "required": true
     }
   }
 }
