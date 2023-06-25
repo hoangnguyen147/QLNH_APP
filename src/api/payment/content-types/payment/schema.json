@@ -8,16 +8,24 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "note": {
-      "type": "string",
-      "required": true
+    "customer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer.customer"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "payments"
     },
     "amount": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "required": true
     }
   }
 }

@@ -24,11 +24,6 @@
       "type": "richtext",
       "required": true
     },
-    "payments": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::payment.payment"
-    },
     "restaurant": {
       "type": "relation",
       "relation": "oneToOne",
@@ -59,6 +54,12 @@
       ],
       "default": "Unpaid",
       "required": true
+    },
+    "payments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::payment.payment",
+      "mappedBy": "event"
     }
   }
 }
