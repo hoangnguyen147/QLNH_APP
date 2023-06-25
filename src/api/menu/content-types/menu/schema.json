@@ -29,11 +29,6 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::menu-item.menu-item"
-    },
-    "main_course": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::menu-item.menu-item"
     }
   }
 }

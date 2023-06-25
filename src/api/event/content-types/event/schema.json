@@ -60,6 +60,11 @@
       "relation": "oneToMany",
       "target": "api::payment.payment",
       "mappedBy": "event"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
     }
   }
 }
